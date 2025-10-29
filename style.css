@@ -4163,6 +4163,11 @@ margin-top: 40px;
   height: auto;
   border-radius: 10px;
 }
+.network-image svg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -4382,49 +4387,67 @@ margin-top: 40px;
 
 
 
-
-
+/* Benefits Network Section */
 .benefits-network {
   padding: 80px 40px;
   background: #fff;
 }
-.benefits-wrapper {
+
+.benefits-network .benefits-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
+  flex-wrap: wrap; /* يسمح بالانحناء على الشاشات الصغيرة */
 }
-.benefits-content {
+
+.benefits-network .benefits-content {
   max-width: 50%;
+  flex: 1 1 300px; /* عرض مرن */
 }
-.benefits-content h2 {
+
+.benefits-network .benefits-content h2 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 30px;
 }
-.benefit-item {
+
+.benefits-network .benefit-item {
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
 }
-.benefit-item .icon {
+
+.benefits-network .benefit-item .icon {
   font-size: 28px;
   margin-right: 15px;
-  color: #2563eb; /* blue */
+  color: #2563eb;
 }
-.benefit-item h3 {
+
+.benefits-network .benefit-item h3 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
 }
-.benefit-item p {
+
+.benefits-network .benefit-item p {
   font-size: 14px;
   color: #555;
 }
-.benefits-image img {
+
+.benefits-network .benefits-image {
+  flex: 1 1 300px;
+  text-align: center;
   max-width: 600px;
 }
-.btn {
+
+.benefits-network .benefits-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.benefits-network .btn {
   display: inline-block;
   margin-top: 25px;
   background: #2563eb;
@@ -4435,8 +4458,66 @@ margin-top: 40px;
   text-decoration: none;
   transition: 0.3s;
 }
-.btn:hover {
+
+.benefits-network .btn:hover {
   background: #1e40af;
+}
+
+/* Responsive */
+
+/* شاشات متوسطة */
+@media (max-width: 992px) {
+  .benefits-network .benefits-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .benefits-network .benefits-content,
+  .benefits-network .benefits-image {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .benefits-network .benefits-content h2 {
+    font-size: 24px;
+  }
+
+  .benefits-network .benefit-item {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .benefits-network .benefit-item .icon {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+/* شاشات صغيرة */
+@media (max-width: 600px) {
+  .benefits-network {
+    padding: 50px 20px;
+  }
+
+  .benefits-network .benefits-content h2 {
+    font-size: 22px;
+  }
+
+  .benefits-network .benefit-item h3 {
+    font-size: 16px;
+  }
+
+  .benefits-network .benefit-item p {
+    font-size: 13px;
+  }
+
+  .benefits-network .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 
 
@@ -5557,5 +5638,463 @@ margin-top: 40px;
   .infrastructure-benefist .feature-box {
     text-align: left;
     max-width: 420px;
+  }
+}
+
+.Service-Consulting {
+  max-width: var(--max-width);
+  margin: 10 auto;
+  display: grid;
+  background-color: #fafafa;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 20px;
+}
+
+/* اليسار */
+.Service-Consulting-left {
+  position: relative;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Service-Consulting-badge {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  background: radial-gradient(circle at 10% 30%, rgba(6, 36, 50, 0.6), transparent 25%), var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.Service-Consulting-circle {
+  --size: 420px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(236, 236, 236, 0.173) 0%, rgba(157, 211, 236, 0.2) 60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.Service-Consulting-circle:before {
+  content: '';
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: rgba(193, 214, 247, 0.168);
+  transform: translate(-10%, -10%);
+}
+
+.Service-Consulting-num {
+  font-size: 110px;
+  font-weight: 800;
+  color: var(--praimary);
+  line-height: 0.9;
+  margin: 0;
+}
+
+.Service-Consulting-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #b3690e;
+  margin-bottom: 8px;
+}
+
+.Service-Consulting-desc {
+  max-width: 320px;
+  color: #000000;
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.Service-Consulting-btn {
+  margin-top: 22px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--accent-grad);
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 122, 51, 0.14);
+}
+
+/* اليمين */
+.Service-Consulting-right {
+  padding: 8px 24px;
+}
+
+.Service-Consulting-eyebrow {
+  font-size: 15px;
+  color: #cc8315;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.Service-Consulting-heading {
+  font-size: 40px;
+  margin: 0 0 18px 0;
+  line-height: 1.05;
+}
+
+.Service-Consulting-heading .accent {
+  color: var(--accent);
+}
+
+.Service-Consulting-overview {
+  color: var(--muted);
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.Service-Consulting-list {
+  margin-top: 6px;
+  padding-left: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.Service-Consulting-list li {
+  margin: 8px 0;
+  padding-right: 18px;
+  position: relative;
+}
+
+.Service-Consulting-list li:before {
+  content: '\2022';
+  color: var(--accent);
+  position: absolute;
+  right: 0;
+  font-weight: 700;
+}
+
+.Service-Consulting-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.Service-Consulting-svc {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: var(--praimary);
+}
+
+.Service-Consulting-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.Service-Consulting-svc h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #000;
+}
+
+.Service-Consulting-svc p {
+  margin: 6px 0 0;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ✅ تحسينات الاستجابة */
+@media (max-width: 1024px) {
+  .Service-Consulting {
+    gap: 24px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 920px) {
+  .Service-Consulting {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .Service-Consulting-left {
+    min-height: auto;
+  }
+
+  .Service-Consulting-right {
+    padding: 0 46px;
+  }
+
+  .Service-Consulting-circle {
+    --size: 460px;
+    margin: 0 auto;
+  }
+
+  .Service-Consulting-heading {
+    font-size: 32px;
+  }
+
+  .Service-Consulting-services {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .Service-Consulting-svc {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+/* إزالة السكرول الأفقي نهائياً */
+.Service-Consulting {
+  overflow-x: hidden;
+}
+
+/* جعل المحتوى الداخلي يتقلص تلقائيًا على الشاشات الصغيرة */
+.Service-Consulting *,
+.Service-Consulting *::before,
+.Service-Consulting *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .Service-Consulting-circle {
+    --size: 400px;
+    border-radius: 10px; /* تغيير من 50% إلى قيمة صغيرة لجعلها مربع */
+  }
+ .Service-Consulting {
+    display: flex;
+    flex-direction: column;   /* العناصر تصطف عموديًا */
+    justify-content: center;  /* محاذاة رأسية للصفحة بالكامل */
+    align-items: center;      /* محاذاة أفقية */
+    min-height: 100vh;        /* ارتفاع الصفحة بالكامل */
+    padding: 20px;            /* مسافة حول المحتوى */
+    text-align: center;       /* نصوص في الوسط */
+    overflow-x: hidden;       /* إزالة أي سكروول أفقي */
+  }
+.Service-Consulting-icon {
+  width: 74px;
+  height: 74px;
+
+}
+  .Service-Consulting-left,
+  .Service-Consulting-right {
+    width: 100%;             /* المحتوى يأخذ كامل العرض */
+    display: flex;
+    justify-content: center; /* محاذاة أفقية */
+    align-items: center;     /* محاذاة رأسية لكل قسم */
+    flex-direction: column;  /* العناصر الداخلية تصطف عموديًا */
+    padding: 0;
+  }
+
+  .Service-Consulting-circle {
+    --size: 350px;           /* تحويل الدائرة لمربع */
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+
+  .Service-Consulting-num {
+    font-size: 28px;
+    font-weight: 700;
+    white-space: nowrap; /* منع النصوص من الانكسار لسطر جديد */
+
+  }
+
+  .Service-Consulting-heading {
+    font-size: 26px;
+  }
+
+  .Service-Consulting-desc {
+    font-size: 17px;
+  }
+
+  .Service-Consulting-services {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .Service-Consulting-svc {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  
+}
+
+@media (max-width: 420px) {
+   .Service-Consulting-circle {
+    --size: 400px;
+    border-radius: 10px; /* نفس الشيء للشاشات الأصغر */
+  }
+
+  .Service-Consulting-num {
+    font-size: 70px;
+  }
+
+  .Service-Consulting-heading {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Servers_Recovery Section ...................*/
+.Servers_Consulting {
+  padding: 170px 40px;
+  color: #fff;
+  background: #0b1233 url("img/background/goverment-banner.jpg") center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.Servers_Consulting-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.Servers_Consulting-content {
+  flex: 1 1 500px;
+}
+
+.Servers_Consulting-content h2 {
+  font-size: 4rem;
+  color: #ffffff;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.Servers_Consulting-content p {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #e3e2e2;
+  line-height: 1.6;
+}
+
+/* القوائم في عمودين */
+.Servers_Consulting .features-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(150px, 1fr));
+  gap: 5px 20px; /* 5px بين الصفوف العمودية و20px بين الأعمدة الأفقية */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Servers_Consulting .features-list li {
+  font-size: 1.4rem;
+  margin-bottom: 6px; /* تقليل المسافة بين الصفوف */
+  position: relative;
+  padding-left: 25px;
+}
+
+.Servers_Consulting .features-list li::before {
+  content: "✔";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* الصورة */
+.Servers_Consulting-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.Servers_Consulting-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive تحسين الاستجابة */
+@media (max-width: 992px) {
+  .Servers_Consulting-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .Servers_Consulting-content {
+    order: 2;
+  }
+
+  .Servers_Consulting-image {
+    order: 1;
+  }
+
+  /* القائمة عمود واحد في الشاشات المتوسطة */
+  .Servers_Consulting .features-list li {
+    padding-left: 18px; /* العلامة تصبح أقرب للنص */
+  }
+
+  .Servers_Consulting .features-list li::before {
+    left: 0; /* تأكد أن العلامة تبقى بمحاذاة النص */
+  }
+
+  .Servers_Consulting-content h2 {
+    font-size: 3rem;
+  }
+
+  .Servers_Consulting-content p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .Servers_Consulting {
+    padding: 100px 20px;
+  }
+
+  .Servers_Consulting-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .Servers_Consulting-content p {
+    font-size: 1.4rem;
+  }
+    .Servers_Consulting .features-list li {
+    padding-left: 18px; /* العلامة تصبح أقرب للنص */
+  }
+
+  .Servers_Consulting .features-list li::before {
+    left: 0; /* تأكد أن العلامة تبقى بمحاذاة النص */
   }
 }
