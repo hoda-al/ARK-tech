@@ -6034,7 +6034,7 @@ margin-top: 40px;
 
 /* الصورة */
 .Servers_Consulting-image {
-  flex: 1 1 400px;
+  flex: 1 1 200px;
   text-align: center;
 }
 
@@ -6085,6 +6085,8 @@ margin-top: 40px;
 
   .Servers_Consulting-content h2 {
     font-size: 2.5rem;
+      margin-top: 20px;
+
   }
 
   .Servers_Consulting-content p {
